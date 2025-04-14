@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Market</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="image.webp" alt="EcoMarket Logo" width="100">
+            
+        </div>
+        
+
+        
+        <!--<div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for products..." onkeyup="showSuggestions()" onclick="showSuggestions()">
+            <button id="search-btn" onclick="performSearch()">🔍</button>
+            <div id="suggestions" class="suggestions-box"></div>
+            <div id="search-results" class="search-results"></div>
+        </div>-->
+        
+
+        <div class="search-container" style="position: relative; display: inline-block;">
+            <input type="text" id="search-input" placeholder="Search for eco-friendly products..." autocomplete="off">
+            <div id="suggestions-box"></div>
+            <button id="search-btn">Search</button>
+        </div>
+        
+        <!--<input type="text" id="searchBar" placeholder="Search for products...">
+        <button id="search-btn">Search</button>-->
+        
+       
+        <div class="nav-icons">
+            <a href="project\project\login.html" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span>Login</span>
+            </a>
+            <a href="cart.html" class="nav-link">
+                <i class="fas fa-box"></i>
+                <span>Orders</span>
+            </a>
+            <a href="order.html" class="nav-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </a>
+            <a href="#" class="nav-link language-switch">
+                <i class="fas fa-globe"></i>
+                <span>EN</span>
+            </a>
+            
+        </div>
+        
+       
+        
+    </header>
+    <!-- Image Slider Banner -->
+
+
+    <!-- Navigation Section -->
+    <nav class="navigation">
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-folder"></i></div>
+            <p>Services</p>
+            <div class="dropdown-menu">
+                <a href="recycling.html"><i class="fas fa-recycle"></i> Recycling</a>
+                <a href="sustainable_products.html"><i class="fas fa-leaf"></i> Sustainable Products</a>
+                <a href="eco-tips.html"><i class="fas fa-lightbulb"></i> Eco Tips</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-book"></i></div>
+            <p>Education</p>
+            <div class="dropdown-menu">
+                <a href="education.html"><i class="fas fa-globe-americas"></i> Climate Change</a>
+                <a href="sustainability.html"><i class="fas fa-recycle"></i> Sustainability</a>
+                <a href="green_energy.html"><i class="fas fa-bolt"></i> Green Energy</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-gift"></i></div>
+            <p>Donation</p>
+            <div class="dropdown-menu">
+                <a href="donation\donate.html"><i class="fas fa-tshirt"></i> Donate Clothes</a>
+                <a href="df.html"><i class="fas fa-utensils"></i> Donate Food</a>
+                <a href="donate_funds.html"><i class="fas fa-dollar-sign"></i> Donate Funds</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Sales Banner -->
+    <!-- Auto-moving Banner -->
+<div class="banner-container">
+    <div class="banner-track">
+        <div class="banner-slide">
+            <img src="banner1.webp" alt="Eco Sale">
+            <div class="banner-text">
+                <h2>50% Off Eco Products</h2>
+                <a href="#" class="banner-btn">Shop Now</a>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="banner2.webp" alt="New Collection">
+            <div class="banner-text">
+                <h2>New Sustainable Collection</h2>
+                <a href="#" class="banner-btn">Explore</a>
+            </div>
+        </div>
+        <div class="banner-slide">
+            <img src="banner2.webp" alt="Special Deals">
+            <div class="banner-text">
+                <h2>Special Green Deals</h2>
+                <a href="#" class="banner-btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Product Categories 
+    <section class="product-container">
+        <div class="product-card">
+            <h3>Accessories</h3>
+            <p>Eco-friendly bags, jewelry, and more!</p>
+        </div>
+        <div class="product-card">
+            <h3>Appliances</h3>
+            <p>Energy-saving appliances for your home.</p>
+        </div>
+        <div class="product-card">
+            <h3>Clothing</h3>
+            <p>Sustainable fashion made from organic materials.</p>
+        </div>
+        <div class="product-card">
+            <h3>Home Decor</h3>
+            <p>Eco-conscious home decorations.</p>
+        </div>
+    </section>-->
+    <!-- Product Categories -->
+<section class="product-container">
+    <a href="stationery.html" class="product-card" target="_blank">
+        <div class="card-content">
+            <i class="fas fa-pen"></i>
+            <h3>Stationery</h3>
+            <p>Eco-friendly stationery products</p>
+            <span class="shop-now">Shop Now →</span>
+        </div>
+    </a>
+    <a href="page.html" class="product-card" target="_blank">
+        <div class="card-content">
+            <i class="fas fa-tooth"></i>
+            <h3>Toiletries</h3>
+            <p>100 % Ecofriendly Bamboo Toiletries for you</p>
+            <span class="shop-now">Shop Now →</span>
+        </div>
+    </a>
+    <!--<a href="clothb.html" class="product-card" target="_blank">
+        <div class="card-content">
+            <i class="fas fa-tshirt card-icon"></i>
+            <h3>Clothing</h3>
+            <p>Sustainable fashion made from organic materials.</p>
+            <span class="shop-now">Shop Now →</span>
+        </div>
+    </a>-->
+    <a href="clothing.html" class="product-card">
+        <div class="card-content">
+            <i class="fas fa-shopping-bag"></i>
+            <h3>Cloth Bags</h3>
+            <p>For you to shop and shop.....</p>
+            <span class="shop-now">Shop Now →</span>
+        </div>
+    </a>
+    
+    <a href="product5.html" class="product-card" target="_blank">
+        <div class="card-content">
+            <i class="fas fa-home card-icon"></i>
+            <h3>Home Decor</h3>
+            <p>Eco-conscious home decorations.</p>
+            <span class="shop-now">Shop Now →</span>
+        </div>
+    </a>
+</section>
+
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Company Logo & Description -->
+            <div class="footer-section about">
+                <h2>EcoMarket</h2>
+                <p>Your go-to marketplace for sustainable and eco-friendly products.</p>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+    
+            <!-- Customer Service -->
+            <div class="footer-section support">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="returns.html">Returns & Refunds</a></li>
+                    <li><a href="shipping.html">Shipping Info</a></li>
+                    <li><a href="support.html">Support Center</a></li>
+                    <li><a href="order-tracking.html">Order Tracking</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoMarket. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('search-input').addEventListener('input', async function () {
+            const query = this.value.trim();
+            const suggestionsBox = document.getElementById('suggestions-box');
+        
+            if (query.length < 2) {
+                suggestionsBox.style.display = "none"; // Hide if input is too short
+                suggestionsBox.innerHTML = "";
+                return;
+            }
+        
+            try {
+                console.log("Fetching:", query); // Debug log
+                const response = await fetch(`http://localhost:3000/search?q=${query}`);
+                const results = await response.json();
+                console.log("Results:", results); // Debug log
+        
+                if (results.length === 0) {
+                    suggestionsBox.innerHTML = "<p class='no-results'>No results found</p>";
+                    suggestionsBox.style.display = "block"; // Show the empty state
+                } else {
+                    suggestionsBox.innerHTML = results.map(item => 
+                        `<p class="suggestion-item" onclick="selectSuggestion('${item.name}')">${item.name}</p>`
+                    ).join("");
+                    suggestionsBox.style.display = "block"; // Show suggestions
+                }
+            } catch (error) {
+                console.error("Error fetching search results:", error);
+            }
+        });
+        
+        function selectSuggestion(name) {
+            document.getElementById('search-input').value = name;
+            document.getElementById('suggestions-box').style.display = "none"; // Hide after selection
+            document.getElementById('suggestions-box').innerHTML = "";
+        }
+    </script>    
+    
+    </body>
+    </html>
+    
+
+</body>
+</html>

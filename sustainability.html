@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Education</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f7ef;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #2f8d46;
+            color: white;
+            padding: 1.5rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .video-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2f8d46;
+            margin-bottom: 10px;
+        }
+
+        .watch-now {
+            display: inline-block;
+            background-color: #2f8d46;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .watch-now:hover {
+            background-color: #267c39;
+        }
+
+        footer {
+            margin-top: 40px;
+            background-color: #2f8d46;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Sustainability Education
+    </header>
+
+    <div class="container">
+        <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=8DJgixMOFv4', '_blank')">
+            <img src="https://img.youtube.com/vi/8DJgixMOFv4/hqdefault.jpg" alt="Video Thumbnail">
+            <div class="video-info">
+                <div class="video-title">What is Sustainability?</div>
+                <a href="https://www.youtube.com/watch?v=8DJgixMOFv4" target="_blank" class="watch-now">Watch Now</a>
+            </div>
+        </div>
+
+        <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=_5r4loXPyx8', '_blank')">
+            <img src="https://img.youtube.com/vi/_5r4loXPyx8/hqdefault.jpg" alt="Video Thumbnail">
+            <div class="video-info">
+                <div class="video-title">How to Live Sustainably?</div>
+                <a href="https://www.youtube.com/watch?v=_5r4loXPyx8" target="_blank" class="watch-now">Watch Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 EcoMarket | Promoting a Sustainable Future
+    </footer>
+
+</body>
+</html>

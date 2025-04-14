@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placed Orders</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; /* Light pastel green background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+            zoom: 1.2; /* Zoom in the whole page */
+        }
+
+        .master-container {
+            width: 100%;
+            max-width: 1000px; /* Increased max-width for better content spread */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Title */
+        .orders-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: #d32f2f; /* Red color for title */
+        }
+
+        /* Order Card */
+        .order-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #fef9f9;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .order-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .order-img {
+            width: 120px; /* Increased image size */
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .order-info span {
+            display: block;
+            font-size: 24px; /* Larger text for item name */
+            font-weight: bold;
+            color: #2e2e2e;
+        }
+
+        .order-info p {
+            font-size: 18px; /* Larger text for item description */
+            color: #5f5f5f;
+            font-style: italic;
+        }
+
+        .order-details {
+            font-size: 16px; /* Slightly larger text */
+            color: #9e9e9e;
+            margin-top: 10px;
+        }
+
+        .order-details span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .order-date {
+            font-size: 18px; /* Larger font size for delivery date */
+            font-weight: bold;
+            color: #388e3c; /* Green color for delivery date */
+        }
+
+        /* Price and Quantity Section */
+        .order-quantity,
+        .order-price {
+            font-size: 18px; /* Increased font size */
+            font-weight: bold;
+            color: #d32f2f; /* Red color for prices */
+        }
+
+        /* Button */
+        .order-btn {
+            margin-top: 15px; /* Added margin to separate button from other content */
+            padding: 12px 25px;
+            background-color: #388e3c; /* Green color */
+            color: white;
+            font-size: 16px; /* Slightly larger button text */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .order-btn:hover {
+            background-color: #2c6e28;
+        }
+
+        .order-btn-container {
+            margin-top: 20px; /* Increased margin to separate button */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="master-container">
+    <div class="orders-title">Placed Orders</div>
+
+    <!-- Order 1 -->
+    <div class="order-card">
+        <img src="sb.png" alt="Shopping Bag" class="order-img">
+        <div class="order-info">
+            <span>Shopping Bag</span>
+            <p>Size: Medium, Color: Black</p>
+            <div class="order-details">
+                <span class="order-quantity">Quantity: 2</span>
+                <span class="order-price">Price per item: ₹1999</span>
+            </div>
+        </div>
+        <div class="order-date">
+            Delivery Date: 15th February 2025
+        </div>
+        <div class="order-btn-container">
+            <button class="order-btn">Track Order</button>
+        </div>
+    </div>
+
+    <!-- Order 2 -->
+    <div class="order-card">
+        <img src="sb.png" alt="Shopping Bag" class="order-img">
+        <div class="order-info">
+            <span>Shopping Bag</span>
+            <p>Size: Large, Color: Red</p>
+            <div class="order-details">
+                <span class="order-quantity">Quantity: 1</span>
+                <span class="order-price">Price per item: ₹2200</span>
+            </div>
+        </div>
+        <div class="order-date">
+            Delivery Date: 18th February 2025
+        </div>
+        <div class="order-btn-container">
+            <button class="order-btn">Track Order</button>
+        </div>
+    </div>
+
+    <!-- Order 3 -->
+    <div class="order-card">
+        <img src="sb.png" alt="Shopping Bag" class="order-img">
+        <div class="order-info">
+            <span>Shopping Bag</span>
+            <p>Size: Small, Color: Blue</p>
+            <div class="order-details">
+                <span class="order-quantity">Quantity: 3</span>
+                <span class="order-price">Price per item: ₹1799</span>
+            </div>
+        </div>
+        <div class="order-date">
+            Delivery Date: 20th February 2025
+        </div>
+        <div class="order-btn-container">
+            <button class="order-btn">Track Order</button>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

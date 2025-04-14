@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donate funds to support eco-friendly initiatives.">
+    <title>Funds Donation</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f7ef;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: rgba(47, 141, 70, 0.9);
+            color: #fff;
+            padding: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2f8d46;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            padding: 12px;
+            font-size: 1rem;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #2f8d46;
+            outline: none;
+        }
+
+        /* Payment Buttons */
+        .payment-options {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+
+        .payment-options button {
+            background-color: #2f8d46;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            flex: 1;
+            margin: 5px;
+        }
+
+        .payment-options button:hover {
+            background-color: #267c39;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            background-color: #ff9800;
+            padding: 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e68900;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>Funds Donation</header>
+
+    <section>
+        <h2>Support Eco-Friendly Causes</h2>
+        <p>Your donation helps fund sustainability projects, clean energy, and conservation efforts.</p>
+
+        <form id="donationForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Donation Amount ($)</label>
+            <input type="number" id="amount" name="amount" required min="1">
+
+            <label for="payment">Select Payment Method</label>
+            <select id="payment" name="payment">
+                <option value="credit_card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="upi">UPI</option>
+                <option value="bank_transfer">Bank Transfer</option>
+            </select>
+
+            <div class="payment-options">
+                <button type="button" onclick="payWithCard()">💳 Credit Card</button>
+                <button type="button" onclick="payWithPayPal()">🅿 PayPal</button>
+                <button type="button" onclick="payWithUPI()">📱 UPI</button>
+            </div>
+
+            <button type="submit">Donate Now</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 EcoMarket | Supporting Green Initiatives</p>
+    </footer>
+
+    <script>
+        document.getElementById("donationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let amount = document.getElementById("amount").value;
+            let payment = document.getElementById("payment").value;
+
+            if (!name || !email || !amount) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            alert(`Thank you ${name} for donating $${amount} via ${payment}!`);
+        });
+
+        function payWithCard() {
+            alert("Redirecting to Credit Card Payment...");
+            window.location.href = "https://www.example.com/credit-card";
+        }
+
+        function payWithPayPal() {
+            alert("Redirecting to PayPal...");
+            window.location.href = "https://www.paypal.com/donate";
+        }
+
+        function payWithUPI() {
+            alert("Redirecting to UPI Payment...");
+            window.location.href = "https://www.example.com/upi";
+        }
+    </script>
+
+</body>
+</html>

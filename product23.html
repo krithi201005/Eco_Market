@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Market</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .image-gallery {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 5px;
+            max-width: 100px;
+        }
+
+        .main-image {
+            width: 50%;
+            position: relative;
+            margin-right: 20px; /* Adding space between the main image and product details */
+        }
+
+        .main-image img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .zoom-box {
+            width: 45%;
+            height: 500px;
+            border: 1px solid #ccc;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .zoomed-image {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+        }
+
+        .product-info {
+            width: 45%;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            margin: 10px 0;
+        }
+
+        .product-info .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .product-info .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .limited-deal {
+            background-color: #ff4444;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 50%;
+            text-transform: uppercase;
+        }
+
+        .offer-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .offer-box li {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .offer-box li:hover {
+            color: #4CAF50;
+            cursor: pointer;
+        }
+
+        .delivery-info {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .free-delivery {
+            color: #28a745;
+            font-size: 18px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            width: 120px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Green Market</h1>
+        <div class="header-links">
+            <a href="#">Cart</a>
+            <a href="#">Orders</a>
+            <a href="#">Hello, John Doe</a>
+            <select>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search products...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-gallery">
+            <!-- Added new thumbnail -->
+            <img src="wipes1.webp" alt="Product Image 1" class="thumbnail" data-main-image="wipes1.webp">
+            <img src="wipes2.jpg" alt="Product Image 2" class="thumbnail" data-main-image="wipes2.jpg">
+            <img src="wipes3.jpg" alt="Product Image 3" class="thumbnail" data-main-image="wipes3.jpg">
+            
+        </div>
+
+        <div class="main-image">
+            <!-- Main Image which will be replaced when clicking on the small images -->
+            <img src="wipes1.webp" alt="Main Product Image" id="mainImage">
+        </div>
+
+        <div class="zoom-box" id="zoomBox">
+            <img src="wipes1.webp" alt="Zoomed Image" id="zoomedImage" class="zoomed-image">
+        </div>
+
+        <div class="product-info">
+            <h2>Ultra-soft and eco-friendly, these reusable face wipes are made from 100% organic cotton. Perfect for gentle cleansing, makeup removal, and skincare, reducing waste with every use.</h2>
+            <p><strong>Brand:</strong> Rusabl</p>
+            <p><strong>Pack Size:</strong> Pack of 4</p>
+            <p><strong>Material:</strong> Organic Bamboo, Charcoal Activated Soft Bristles</p>
+            <p><strong>Features:</strong> Anti-bacterial, Eco-friendly, Biodegradable</p>
+            <p><strong>Rating:</strong> 4.5 out of 5 stars (1,234 ratings)</p>
+            <p><strong>Visit the <a href="#">Rusabl Store</a></strong></p>
+
+            <div class="limited-deal">Limited Time Deal</div>
+
+            <div class="offer-box">
+                <strong>Cashback Offer:</strong>
+                <ul>
+                    <li>Upto ₹10 cashback on Amazon Pay ICICI Bank Credit Cards</li>
+                </ul>
+            </div>
+            <div class="offer-box">
+                <strong>Bank Offers:</strong>
+                <ul>
+                    <li>Upto ₹1,000 discount on select Credit Cards</li>
+                </ul>
+            </div>
+            <div class="offer-box">
+                <strong>Partner Offers:</strong>
+                <ul>
+                    <li>Get GST invoice and save up to 28% on business purchases</li>
+                </ul>
+            </div>
+
+            <div class="delivery-info">
+                <p><span class="free-delivery">Free Delivery</span> on orders above ₹499</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+        <p>© 2025 Green Market, All Rights Reserved</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </footer>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const zoomBox = document.getElementById('zoomBox');
+        const zoomedImage = document.getElementById('zoomedImage');
+
+        // Add zoom effect to main image
+        mainImage.addEventListener('mouseenter', () => {
+            zoomBox.style.display = 'block';
+        });
+
+        mainImage.addEventListener('mouseleave', () => {
+            zoomBox.style.display = 'none';
+        });
+
+        mainImage.addEventListener('mousemove', (e) => {
+            const rect = mainImage.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Set position of zoomed image based on mouse position
+            zoomedImage.style.left = `-${x * 2}px`;
+            zoomedImage.style.top = `-${y * 2}px`;
+        });
+
+        // Change main image on thumbnail click
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', (e) => {
+                const newImageSrc = e.target.getAttribute('data-main-image');
+                mainImage.src = newImageSrc;
+                zoomedImage.src = newImageSrc; // Update zoomed image
+            });
+        });
+    </script>
+</body>
+</html>

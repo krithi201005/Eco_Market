@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling - Eco Market</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        .faq {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-item button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+        }
+        .faq-content {
+            display: none;
+            padding: 10px;
+            background-color: #c8e6c9;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .progress-bar {
+            width: 50%; /* Dynamic value */
+            height: 30px;
+            background-color: #66bb6a;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            border-radius: 10px;
+        }
+        .pledge-form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recycling and Waste Management</h1>
+    <p>Recycling is essential for a sustainable environment. Learn how to manage waste efficiently!</p>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button onclick="toggleFAQ(0)">What materials can be recycled?</button>
+            <div class="faq-content">Paper, plastic, glass, metal, and e-waste can be recycled.</div>
+        </div>
+        <div class="faq-item">
+            <button onclick="toggleFAQ(1)">How do I start recycling at home?</button>
+            <div class="faq-content">Separate your waste into recyclables and non-recyclables.</div>
+        </div>
+    </div>
+
+    <h2>Recycling Progress</h2>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">50%</div>
+    </div>
+
+    <h2>Pledge to Recycle</h2>
+    <form class="pledge-form" onsubmit="submitPledge(event)">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <button type="submit">Pledge</button>
+    </form>
+    <p id="pledge-message"></p>
+
+    <script>
+        function toggleFAQ(index) {
+            let contents = document.querySelectorAll('.faq-content');
+            contents[index].style.display = contents[index].style.display === 'block' ? 'none' : 'block';
+        }
+
+        function submitPledge(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            document.getElementById('pledge-message').innerText = name + " has pledged to recycle!";
+        }
+    </script>
+</body>
+</html>

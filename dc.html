@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donate eco-friendly clothes to support sustainable fashion.">
+    <title>Eco-Friendly Clothing Donation</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f7ef;
+            color: #333;
+            line-height: 1.6;
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: rgba(47, 141, 70, 0.8);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #f9d342;
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2f8d46;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        .donation-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .donation-box .icon {
+            font-size: 30px;
+            color: #2f8d46;
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .donation-box .icon:hover {
+            transform: scale(1.2);
+            color: #f9d342;
+        }
+
+        /* 3D Effect on Form Fields */
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 15px;
+            font-size: 1rem;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #2f8d46;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            outline: none;
+            transform: translateY(-2px); /* Lifting effect */
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        /* Submit Button 3D Effect */
+        button {
+            background-color: #2f8d46;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #267c39;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px); /* Button lift on hover */
+        }
+
+        button:active {
+            background-color: #1e6231;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px); /* Button pressed effect */
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 40px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin-top: 5px;
+        }
+    </style>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Eco Clothing Donation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">About</a></li>
+                    <li><a href="#how-to-donate">How to Donate</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro">
+        <h2>Support Sustainable Fashion</h2>
+        <p>Join us in our mission to promote eco-friendly clothing. Your donations help reduce waste, contribute to a circular economy, and support sustainable living, in line with global Sustainable Development Goals (SDG).</p>
+        
+        <div class="donation-box">
+            <i class="fas fa-heart icon"></i>
+            <i class="fas fa-recycle icon"></i>
+            <i class="fas fa-hand-holding-heart icon"></i>
+        </div>
+    </section>
+
+    <section id="how-to-donate">
+        <h2>How to Donate Clothes</h2>
+        <p>It’s simple to donate your old clothes that are still in good condition. Just fill out the form below, and we will arrange a pickup or provide drop-off locations.</p>
+
+        <!-- Donation Form -->
+        <form id="donationForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="donation-items">Items You Are Donating</label>
+            <textarea id="donation-items" name="donation-items" required></textarea>
+
+            <label for="pickup-location">Preferred Pickup Location</label>
+            <input type="text" id="pickup-location" name="pickup-location">
+
+            <button type="submit">Submit Donation</button>
+        </form>
+    </section>
+
+    <footer>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@ecofashiondonation.org</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("donationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents the form from submitting the default way
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const items = document.getElementById("donation-items").value;
+            const location = document.getElementById("pickup-location").value;
+
+            // Simple validation
+            if (!name || !email || !items) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // Show a confirmation message
+            alert(`Thank you for your donation, ${name}! We will contact you at ${email} for pickup arrangements.`);
+            
+            // Optionally, you can send this form data to a backend server (not covered in this example)
+        });
+    </script>
+</body>
+</html>

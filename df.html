@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donate food to help those in need.">
+    <title>Food Donation - Help End Hunger</title>
+    <script>
+        document.getElementById("donationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from actually submitting
+    
+            // Show a thank you message
+            alert("Thank you for your generous food donation! Your contribution will help those in need.");
+    
+            // Optionally, reset the form fields
+            this.reset();
+        });
+    </script>
+    
+    <style>
+        /* Resetting default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f4e1;
+            color: #333;
+            line-height: 1.6;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-color: rgba(220, 87, 47, 0.9);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #f4c542;
+        }
+
+        section {
+            padding: 40px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #dc572f;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        .donation-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .donation-images img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .donation-images img:hover {
+            transform: scale(1.05);
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 15px;
+            font-size: 1rem;
+            width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #dc572f;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            outline: none;
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button {
+            background-color: #dc572f;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #c44b26;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #a93f21;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 40px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Food Donation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Why Donate?</a></li>
+                    <li><a href="#how-to-donate">How to Donate</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro">
+        <h2>Help Fight Hunger</h2>
+        <p>Your food donation can make a difference in someone's life. Join us in providing meals to families in need and reducing food waste.</p>
+
+        <div class="donation-images">
+            <img src="food1.jpg" alt="Food Donation">
+            <img src="food2.jpg" alt="Charity Meal">
+            <img src="food3.jpg" alt="Volunteers Serving Food">
+        </div>
+    </section>
+
+    <section id="how-to-donate">
+        <h2>How to Donate Food</h2>
+        <p>Fill out the form below to donate food. We accept packaged goods, fresh food, and essential groceries.</p>
+
+        <form id="donationForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="food-items">Food Items You Are Donating</label>
+            <textarea id="food-items" name="food-items" required></textarea>
+
+            <button type="submit">Submit Donation</button>
+        </form>
+    </section>
+
+    <footer>
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@fooddonation.org</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+        }
+
+        .master-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Cart section */
+        .cart {
+            margin-bottom: 20px;
+        }
+
+        .cart .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .products {
+            margin-top: 10px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #efefef;
+        }
+
+        .product img {
+            width: 60px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            flex: 1;
+            padding-left: 15px;
+        }
+
+        .product-info span {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #47484b;
+        }
+
+        .product-info p {
+            font-size: 14px;
+            color: #7a7c81;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quantity button {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 6px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #47484b;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2B2B2F;
+        }
+
+        /* Payment Options */
+        .payment-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #efeff3;
+            border-radius: 8px;
+        }
+
+        .payment-container label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #47484b;
+        }
+
+        .payment-method {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+
+        .payment-method input {
+            margin-right: 10px;
+        }
+
+        .payment-method img,
+        .payment-method svg {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        /* Checkout Section */
+        .checkout {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #efeff3;
+            border-radius: 8px;
+        }
+
+        .checkout .details {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .checkout .checkout-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #efeff3;
+            border-radius: 8px;
+        }
+
+        .checkout .checkout-btn {
+            padding: 10px 20px;
+            background-color: #4480FF;
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .checkout .checkout-btn:hover {
+            background-color: #0550ED;
+        }
+    </style>
+</head>
+<body>
+
+<div class="master-container">
+    <!-- Cart Section -->
+    <div class="cart">
+        <div class="title">Your Cart</div>
+        <div class="products">
+            <div class="product">
+                <img src="sb.png" alt="Shopping Bag">
+                <div class="product-info">
+                    <span>Shopping Bag</span>
+                    <p>Size: Medium</p>
+                    <p>Color: Black</p>
+                </div>
+                <div class="quantity">
+                    <button>−</button>
+                    <label>1</label>
+                    <button>+</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Options Section -->
+    <div class="payment-container">
+        <label>Payment Options</label>
+        <div class="payment-method">
+            <input type="radio" id="gpay" name="payment-method" value="gpay">
+            <label for="gpay">
+                <img src="carttt\gpay.PNG" alt="Google Pay">
+                Google Pay
+            </label>
+            <input type="radio" id="netbanking" name="payment-method" value="netbanking">
+            <label for="netbanking">
+                <img src="carttt\net.png" alt="Google Pay">
+                
+                Net Banking
+            </label>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="checkout">
+        <div class="details">
+            <span>Your cart subtotal:</span>
+            <span>₹1999</span>
+        </div>
+        <div class="details">
+            <span>Discount applied:</span>
+            <span>₹100</span>
+        </div>
+        <div class="details">
+            <span>Shipping fees:</span>
+            <span>₹50</span>
+        </div>
+        <div class="checkout-footer">
+            <div class="price">₹1949</div>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkout() {
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked');
+        if (paymentMethod) {
+            if (paymentMethod.value === "gpay") {
+                window.location.href = "https://pay.google.com"; // Google Pay link
+            } else if (paymentMethod.value === "netbanking") {
+                window.location.href = "https://www.indianbank.net.in"; // Indian Bank Net Banking page
+            }
+        } else {
+            alert("Please select a payment method.");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Market</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-links a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .image-gallery {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 5px;
+            max-width: 100px;
+        }
+
+        .main-image {
+            width: 50%;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        .main-image img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .zoom-box {
+            width: 45%;
+            height: 500px;
+            border: 1px solid #ccc;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .zoomed-image {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+        }
+
+        .product-info {
+            width: 45%;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-info h2 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            margin: 10px 0;
+        }
+
+        .product-info .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .product-info .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .limited-deal {
+            background-color: #ff4444;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            max-width: 50%;
+            text-transform: uppercase;
+        }
+
+        .offer-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .offer-box li {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .offer-box li:hover {
+            color: #4CAF50;
+            cursor: pointer;
+        }
+
+        .delivery-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: auto;
+            position: relative;
+        }
+
+        .delivery-info {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .delivery-info p {
+            margin: 5px 0;
+        }
+
+        .delivery-info .free-delivery {
+            color: #28a745;
+            font-size: 18px;
+        }
+
+        .quantity-selection {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .quantity-selection label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .quantity-selection input[type="number"] {
+            padding: 10px;
+            width: 50px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            width: 120px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Green Market</h1>
+        <div class="header-links">
+            <a href="#">Cart</a>
+            <a href="#">Orders</a>
+            <a href="#">Hello, John Doe</a>
+            <select>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+            </select>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search products...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-gallery">
+           
+            <img src="p21.jpg" alt="Product Image 2" class="thumbnail" data-main-image="p21.jpg">
+            <img src="p22.webp" alt="Product Image 3" class="thumbnail" data-main-image="p22.webp">
+            <img src="p23.jpg" alt="Product Image 4" class="thumbnail" data-main-image="p23.jpg">
+        </div>
+
+        <div class="main-image">
+            <img src="p21.jpg" alt="Main Product Image" id="mainImage">
+        </div>
+
+        <div class="zoom-box" id="zoomBox">
+            <img src="p21.jpg" alt="Zoomed Image" id="zoomedImage" class="zoomed-image">
+        </div>
+
+        <div class="product-info">
+            <h2>bioQ Eco Choice Recycled Paper Notebook – 100 Pages with Eco Friendly Jute Bag Packaging</h2>
+            <p><strong>Brand:</strong> bioQ</p>
+            <p><strong>Rating:</strong> 4.1 out of 5 stars (66 ratings)</p>
+            <p><strong>Price:</strong> ₹333.00 with 33% savings (M.R.P.: ₹499.00)</p>
+            <p><strong>Shipping:</strong> FREE delivery Monday, 17 February for Prime members. Details</p>
+            <p><strong>Sold by:</strong> bioQ Eco</p>
+            <p><strong>Ships from:</strong> Amazon</p>
+
+            <div class="limited-deal">Limited Time Deal</div>
+
+            <div class="offer-box">
+                <strong>Cashback Offer:</strong>
+                <ul>
+                    <li>Up to ₹90 cashback ₹30 per unit on buying 2+</li>
+                </ul>
+            </div>
+            <div class="offer-box">
+                <strong>Bank Offers:</strong>
+                <ul>
+                    <li>Upto ₹2,000.00 discount on select Credit Cards</li>
+                </ul>
+            </div>
+
+            <div class="delivery-container">
+                <div class="delivery-info">
+                    <p><span class="free-delivery">Free Delivery</span> on orders above ₹499</p>
+                    <p>Save up to 15% on this product with business pricing and GST input tax credit</p>
+                </div>
+
+                <div class="quantity-selection">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+
+                <div class="delivery-info">
+                    <label for="address">Select Delivery Address:</label>
+                    <select id="address">
+                        <option value="address1">NITHYAN... - Kelamba... 603103</option>
+                    </select>
+                </div>
+
+                <div class="buttons-container">
+                    <button class="button">Add to Cart</button>
+                    <button class="button">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+        <p>© 2025 Green Market, All Rights Reserved.</p>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </footer>
+
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const zoomBox = document.getElementById('zoomBox');
+        const zoomedImage = document.getElementById('zoomedImage');
+
+        thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener('click', function () {
+                const mainImageSrc = this.getAttribute('data-main-image');
+                mainImage.src = mainImageSrc;
+                zoomedImage.src = mainImageSrc;
+            });
+        });
+
+        mainImage.addEventListener('mousemove', function (e) {
+            const rect = mainImage.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const zoomWidth = zoomBox.offsetWidth;
+            const zoomHeight = zoomBox.offsetHeight;
+
+            const zoomX = (x / rect.width) * zoomedImage.width - zoomWidth / 2;
+            const zoomY = (y / rect.height) * zoomedImage.height - zoomHeight / 2;
+
+            zoomedImage.style.transform = 'translate(-${zoomX}px, -${zoomY}px)';
+        });
+
+        mainImage.addEventListener('mouseenter', function () {
+            zoomBox.style.display = 'block';
+        });
+
+        mainImage.addEventListener('mouseleave', function () {
+            zoomBox.style.display = 'none';
+        });
+    </script>
+</body>
+</html> 
