@@ -20,7 +20,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy to Render
+      - name: Render Deployment
         run: |
           curl -sL https://render.com/install.sh | bash
           render deploy --repo https://github.com/krithikha201005/Eco-Market --service eco-market-backend
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+
